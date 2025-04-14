@@ -1,0 +1,14 @@
+<!-- error.ejs is a visual page that is displayed when an error status is given in app.js.
+whichever error status code is returned (400, 404, 500), the message that goes with that status 
+is displayed in the error-message div as well as the code. -->
+
+<section class="error-page"> <!--open section-->
+    <h2>Error</h2> <!-- this is the html header element-->
+    <div class="error-message"> <!-- div of error message (no header in div) -->
+      <p><%= message || 'An error occurred' %></p> <!--an error message is shown depending on the http status-->
+      <% if (status) { %> 
+        <p>Status: <%= status %></p> <!--error status code is displayed-->
+      <% } %>
+    </div> <!-- end div-->
+    <a href="/" class="btn">Return to Home</a> <!-- html button element that redirects user to the home page onclick-->
+  </section> <!-- end section-->
